@@ -89,7 +89,13 @@ The script will automatically request administrator privileges and open a GUI �
 
 ## Utilisation
 
-> **Requiert les droits Administrateur** (auto-élévation intégrée au démarrage).
+> [!NOTE]
+> If you are not allowed to run **PowerShell scripts**, *enable* it first:
+> ```
+> Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
+> ```
+> or refer to [EnablePowerShellScript](https://github.com/insovs/EnablePowerShellScript).
+
 1. Sélectionner une catégorie dans le menu latéral gauche.
 2. Cocher / décocher les tweaks individuels à appliquer dans la popup.
 3. Ajuster les valeurs numériques si disponibles (`CursorUpdateInterval`, `MouseDataQueueSize`).
@@ -108,13 +114,6 @@ Pour annuler : **Revert Optimization** → sélectionner un backup dans la liste
 > Tester ces deux ci dessous **indépendamment** en cas d'instabilité pour isoler la source du problème et corrige cela.
 - `CursorUpdateInterval = 0` correspond au taux maximal. Augmenter progressivement (1, 2, 3...) si des instabilités apparaissent.
 - `MouseDataQueueSize` : **ne pas descendre en dessous de 16**. Sur systèmes anciens ou instables, tester 18–24.
-
-> [!NOTE]
-> If you are not allowed to run **PowerShell scripts**, *enable* it first:
-> ```
-> Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
-> ```
-> or refer to [EnablePowerShellScript](https://github.com/insovs/EnablePowerShellScript).
 
 ---
 
