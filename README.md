@@ -109,7 +109,7 @@ Pour annuler : **Revert Optimization** → sélectionner un backup dans la liste
 - `CursorUpdateInterval = 0` correspond au taux maximal. Augmenter progressivement (1, 2, 3...) si des instabilités apparaissent.
 - `MouseDataQueueSize` : **ne pas descendre en dessous de 16**. Sur systèmes anciens ou instables, tester 18–24.
 
-> [!CAUTION]
+> [!NOTE]
 > If you are not allowed to run **PowerShell scripts**, *enable* it first:
 > ```
 > Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
