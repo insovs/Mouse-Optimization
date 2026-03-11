@@ -1,5 +1,4 @@
 # Mouse Optimization — PowerShell GUI
-
 > Script PowerShell avec interface graphique pour optimiser l'input souris sous Windows.  
 > Conçu pour le gaming compétitif / supprime toute latence et interférence logicielle.
 
@@ -9,99 +8,87 @@ L'interface permet de sélectionner, appliquer ou annuler chaque catégorie de t
 ---
 
 ## Preview
-![Proceed Optimization](https://imgur.com/XTgQb9A.png)
+
+> Interface principale — menu latéral avec les 6 catégories de tweaks, console de sortie intégrée et boutons d'action (Apply, Revert, Status).
+
+![Main interface](https://imgur.com/XTgQb9A.png)
 
 <details>
-  <summary>Click to show more screenshots</summary>
+  <summary>More screenshots</summary>
 
-**First section Optimization**
+---
 
-![Revert Optimization](https://imgur.com/2N5SAvL.png)
+**Tweak selection popup — sélection individuelle des tweaks**
+> Fenêtre de sélection d'une catégorie : chaque tweak est listé avec son nom, sa description et une case à cocher. Il est possible de tout sélectionner, tout désélectionner, ou choisir manuellement les tweaks à appliquer avant de confirmer.
 
-**Show actual configuration** — live status of all tracked reg keys
+![Tweak popup](https://imgur.com/2N5SAvL.png)
 
-![Show Service List](https://imgur.com/gDXhdeG.png)
+---
 
-**After have apply th first section exemple** 
-![After apply](https://imgur.com/p6iMaFw.png)
+**Live status — état actuel de chaque clé registre trackée**
+> Vue en temps réel de l'état de tous les tweaks : `applied` (vert) si la valeur correspond, `default` (jaune) si elle diffère, `not found` (gris) si la clé est absente. Permet de vérifier l'état exact du système avant ou après application.
 
-**Backup section** — ...
+![Status view](https://imgur.com/gDXhdeG.png)
 
-![Backup Section](https://imgur.com/wfyMDDy.png)
+---
+
+**Console output — résultat après application d'une catégorie**
+> Log détaillé affiché après chaque Apply : nom du tweak, statut (`applied` / `failed`), description, chemin du backup créé et résumé final. Tout est visible directement dans l'interface sans ouvrir de fenêtre externe.
+
+![Apply output](https://imgur.com/p6iMaFw.png)
+
+---
+
+**Revert — restauration d'un backup registre**
+> Liste tous les backups `.reg` disponibles avec leur date et heure de création. Un clic sur Restore applique silencieusement le fichier sélectionné via `regedit /s` pour annuler toutes les modifications effectuées.
+
+![Revert view](https://imgur.com/wfyMDDy.png)
 
 </details>
+
+---
 
 ## Support
 **If you need any help or have questions**, feel free to join the **[Discord support server](https://discord.gg/insovs)** — I'll be happy to assist you.
 
+---
+
 ## Installation & Launch
-Head to the **[Releases](https://github.com/insovs/insopti-ServiceOptimization/releases)** section and download `ServiceOptimization.ps1`, then **right-click** it → **"Run with PowerShell"**.  
-The script will automatically request administrator privileges and open a dark GUI.
+Head to the **[Releases](https://github.com/insovs/insopti-ServiceOptimization/releases)** section and download `MouseOptimization.ps1`, then **right-click** it → **"Run with PowerShell"**.  
+The script will automatically request administrator privileges and open a dark GUI — no installation required, fully standalone.
+
+---
 
 ## Fonctionnalités
 
-- Suppression complète de l'accélération (logicielle + matérielle)
-- Mouvement 1:1 parfaitement linéaire (courbes X/Y plates)
-- Réduction des délais driver : `mouclass.sys` priorité kernel 31, transmit timeout 0
-- Optimization du buffer data queue Size.
-- Optimisation USB (suspension sélective désactivée)
-- Désactivation du magnétisme curseur et des auto-focus
-- Suppression des effets visuels parasites du curseurs (ombres, trainées)
-- Backup `.reg` automatique avant chaque modification
-- Revert en un clic via le backup sélectionné
+- Suppression complète de l'accélération souris (logicielle via `MouseSpeed` + matérielle via `MouseThreshold1/2`)
+- Mouvement 1:1 parfaitement linéaire — courbes X/Y (`SmoothMouseXCurve` / `SmoothMouseYCurve`) forcées à zéro
+- Désactivation du magnétisme curseur Windows (`CursorMagnetism`) — supprime les attractions automatiques vers les boutons UI
+- Réduction des délais driver — `mouclass.sys` en priorité kernel realtime (31) et transmit timeout forcé à 0
+- Optimisation du buffer d'entrée — `MouseDataQueueSize` réglé à 16 pour un transfert d'événements plus rapide
+- Optimisation USB — suspension sélective désactivée pour éviter les micro-coupures et la latence périphérique
+- Suppression des effets visuels parasites du curseur (ombres, trainées) via `UserPreferencesMask`
+- Hover instantané — `MouseHoverTime` à 0ms, double-clic resserré à 200ms
+- Backup `.reg` automatique avant chaque modification — restauration complète possible à tout moment
+- Revert en un clic — sélection du backup et restauration silencieuse via `regedit /s`
+- Interface console intégrée — log en temps réel de chaque tweak appliqué avec statut coloré
 
 ---
 
 ## Tweaks inclus
 
-| Catégorie | Effet principal |
-|---|---|
-| Main Registry Tweaks | Accel off, hover 0ms, double-clic 200ms, etc |
-| CursorUpdateInterval | Taux de mise à jour curseur maximal |
-| HID Pointer Mode | Pointeur absolu/relatif sans conversion parasite |
-| Class Transmit Timeout | Envoi immédiat des événements input |
-| Class Thread Priority | Priorité kernel realtime pour `mouclass.sys` |
-| Data Queue Size | envoie des informations plus rapide|
+| Catégorie | Clés modifiées | Effet principal |
+|---|---|---|
+| Main Registry Tweaks | `MouseSpeed`, `MouseThreshold1/2`, `SmoothMouseXCurve/YCurve`, `MouseHoverTime`, `UserPreferencesMask`, etc | Suppression accel, mouvement linéaire, hover 0ms, effets visuels off |
+| CursorUpdateInterval | `CursorUpdateInterval` (mouhid) | Taux de mise à jour curseur maximal — valeur configurable (0 = fastest) |
+| HID Pointer Mode | `TreatAbsolutePointerAsAbsolute`, `TreatAbsoluteAsRelative` | Correction du mode pointeur HID — évite les sauts et conversions parasites |
+| Class Transmit Timeout | `MouseTransmitTimeout` (mouclass) | Suppression du délai d'envoi interne — événements transmis immédiatement |
+| Class Thread Priority | `ThreadPriority` (mouclass) | Priorité kernel 31 (realtime) — traitement des interruptions souris en priorité absolue |
+| Data Queue Size | `MouseDataQueueSize` (mouclass) | Buffer d'entrée à 16 — latence minimale, transfert plus rapide des événements |
 
 ---
 
 ## Utilisation
 
-> **Requiert les droits Administrateur** (auto-élévation intégrée).
+> **Requiert les droits Administrateur** (auto-élévation intégrée au démarrage).
 ```powershell
-.\MouseOptimization.ps1
-```
-
-1. Sélectionner une catégorie dans le menu latéral
-2. Cocher / décocher les tweaks à appliquer
-3. Cliquer **Apply**
-4. Redémarrer pour valider tous les changements
-
-Pour annuler : **Revert Optimization** → sélectionner un backup → **Restore**
-
----
-
-## Notes
-
-- Un backup `.reg` est créé automatiquement dans `MouseOptimizer_Backups/` avant chaque application.
-- Tester ces catégories indépendamment en cas d'instabilité.
-- `CursorUpdateInterval = 0` = latence max. Augmenter si instabilité.
-- `MouseDataQueueSize` : ne pas descendre en dessous de 16.
-- Redémarrage recommandé après application d'un tweaks.
-
-> [!CAUTION]
-> If you are not allowed to run **PowerShell scripts**, *enable* it first:
-> ```
-> Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
-> ```
-> or refer to [EnablePowerShellScript](https://github.com/insovs/EnablePowerShellScript).
-
-
-*Pour toute question : [Discord](https://discord.com/invite/fayeECjdtb)*
-
----
-
-<p align="center">
-  <sub>©insopti — <a href="https://guns.lol/inso.vs">guns.lol/inso.vs</a> | For personal use only.</sub>
-</p>
-
