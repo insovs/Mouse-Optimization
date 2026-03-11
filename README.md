@@ -4,9 +4,6 @@
 
 A set of targeted registry tweaks to achieve **raw, linear and immediate** mouse movement. The interface lets you select, apply or revert each category of tweaks in one click, with automatic backup before any modification.
 
-> [!NOTE]
-> Not sure what it does? Check the **[video preview](https://youtu.be/p5Yo4Uq4rYk)** to see it in action. The whole process takes under 10 seconds.
-
 ---
 
 ## Preview
@@ -17,6 +14,10 @@ A set of targeted registry tweaks to achieve **raw, linear and immediate** mouse
 
 <details>
   <summary>More screenshots</summary>
+
+> [!NOTE]
+> Not sure what it does? Check the **[video preview](https://youtu.be/p5Yo4Uq4rYk)** to see it in action. The whole process takes under 10 seconds.
+
 
 ---
 
