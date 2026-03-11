@@ -107,7 +107,7 @@ Pour annuler : **Revert Optimization** → sélectionner un backup dans la liste
 ---
 
 ## Notes
-- Un backup `.reg` est créé automatiquement dans `MouseOptimizer_Backups/` avant chaque application — même si certaines clés n'existent pas encore.
+- Un backup `.reg` est créé automatiquement dans `MouseOptimizer_Backups/` avant chaque application.
 - Redémarrage recommandé après application — certaines clés kernel ne sont chargées qu'au boot.
 
 > [!CAUTION]
