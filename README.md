@@ -92,3 +92,41 @@ The script will automatically request administrator privileges and open a dark G
 
 > **Requiert les droits Administrateur** (auto-élévation intégrée au démarrage).
 ```powershell
+.\MouseOptimization.ps1
+```
+
+1. Sélectionner une catégorie dans le menu latéral gauche
+2. Cocher / décocher les tweaks individuels à appliquer dans la popup
+3. Ajuster les valeurs numériques si disponibles (`CursorUpdateInterval`, `MouseDataQueueSize`)
+4. Cliquer **Apply** — un backup est créé automatiquement avant toute écriture
+5. Redémarrer le système pour valider l'ensemble des modifications
+
+Pour annuler : **Revert Optimization** → sélectionner un backup dans la liste → **Restore** → redémarrer.
+
+---
+
+## Notes
+
+- Un backup `.reg` est créé automatiquement dans `MouseOptimizer_Backups/` avant chaque application — même si certaines clés n'existent pas encore.
+- Tester chaque catégorie **indépendamment** en cas d'instabilité pour isoler la source du problème.
+- `CursorUpdateInterval = 0` correspond au taux maximal. Augmenter progressivement (1, 2, 3...) si des instabilités apparaissent.
+- `MouseDataQueueSize` : **ne pas descendre en dessous de 16**. Sur systèmes anciens ou instables, tester 18–24.
+- Redémarrage recommandé après application — certaines clés kernel ne sont chargées qu'au boot.
+- Les tweaks `mouclass` et `mouhid` agissent au niveau driver et nécessitent un redémarrage pour être effectifs.
+
+> [!CAUTION]
+> If you are not allowed to run **PowerShell scripts**, *enable* it first:
+> ```
+> Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
+> ```
+> or refer to [EnablePowerShellScript](https://github.com/insovs/EnablePowerShellScript).
+
+---
+
+*Pour toute question : [Discord](https://discord.com/invite/fayeECjdtb)*
+
+---
+
+<p align="center">
+  <sub>©insopti — <a href="https://guns.lol/inso.vs">guns.lol/inso.vs</a> | For personal use only.</sub>
+</p>
