@@ -70,7 +70,7 @@
 
 ## Installation & Launch
 Head to the **[Releases](https://github.com/insovs/insopti-MouseOptimization/releases)** section and download `MouseOptimization.ps1`, then **right-click** it → **"Run with PowerShell"**.  
-The script will automatically request administrator privileges and open a dark GUI — no installation required, fully standalone.
+The script will automatically request administrator privileges and open a GUI — no installation required, fully standalone.
 
 ---
 
@@ -90,15 +90,11 @@ The script will automatically request administrator privileges and open a dark G
 ## Utilisation
 
 > **Requiert les droits Administrateur** (auto-élévation intégrée au démarrage).
-```powershell
-.\MouseOptimization.ps1
-```
-
-1. Sélectionner une catégorie dans le menu latéral gauche
-2. Cocher / décocher les tweaks individuels à appliquer dans la popup
-3. Ajuster les valeurs numériques si disponibles (`CursorUpdateInterval`, `MouseDataQueueSize`)
-4. Cliquer **Apply** — un backup est créé automatiquement avant toute écriture
-5. Redémarrer le système pour valider l'ensemble des modifications
+1. Sélectionner une catégorie dans le menu latéral gauche.
+2. Cocher / décocher les tweaks individuels à appliquer dans la popup.
+3. Ajuster les valeurs numériques si disponibles (`CursorUpdateInterval`, `MouseDataQueueSize`).
+4. Cliquer **Apply** — un backup est créé automatiquement avant toute écriture.
+5. Redémarrer le système pour valider l'ensemble des modifications.
 
 Pour annuler : **Revert Optimization** → sélectionner un backup dans la liste → **Restore** → redémarrer.
 
@@ -107,11 +103,10 @@ Pour annuler : **Revert Optimization** → sélectionner un backup dans la liste
 ## Notes
 
 - Un backup `.reg` est créé automatiquement dans `MouseOptimizer_Backups/` avant chaque application — même si certaines clés n'existent pas encore.
-- Tester chaque catégorie **indépendamment** en cas d'instabilité pour isoler la source du problème.
+- Tester ces deux ci dessous **indépendamment** en cas d'instabilité pour isoler la source du problème et corrige cela.
 - `CursorUpdateInterval = 0` correspond au taux maximal. Augmenter progressivement (1, 2, 3...) si des instabilités apparaissent.
 - `MouseDataQueueSize` : **ne pas descendre en dessous de 16**. Sur systèmes anciens ou instables, tester 18–24.
 - Redémarrage recommandé après application — certaines clés kernel ne sont chargées qu'au boot.
-- Les tweaks `mouclass` et `mouhid` agissent au niveau driver et nécessitent un redémarrage pour être effectifs.
 
 > [!CAUTION]
 > If you are not allowed to run **PowerShell scripts**, *enable* it first:
@@ -119,10 +114,6 @@ Pour annuler : **Revert Optimization** → sélectionner un backup dans la liste
 > Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
 > ```
 > or refer to [EnablePowerShellScript](https://github.com/insovs/EnablePowerShellScript).
-
----
-
-*Pour toute question : [Discord](https://discord.com/invite/fayeECjdtb)*
 
 ---
 
