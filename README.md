@@ -2,7 +2,7 @@
 > Script PowerShell avec interface graphique pour optimiser l'input souris sous Windows.  
 > Conçu pour le gaming compétitif / supprime toute latence et interférence logicielle.
 
-**Mouse Optimization** applique un ensemble de tweaks registre ciblés pour obtenir un mouvement souris **brut, linéaire et instantané**. L'interface permet de sélectionner, appliquer ou annuler chaque catégorie de tweaks en un clic, avec sauvegarde automatique avant toute modification.
+Ensemble de tweaks registre ciblés pour obtenir un mouvement souris **brut, linéaire et instantané**. L'interface permet de sélectionner, appliquer ou annuler chaque catégorie de tweaks en un clic, avec sauvegarde automatique avant toute modification.
 
 > [!NOTE]
 > Not sure what it does? Check the **[video preview](https://youtu.be/p5Yo4Uq4rYk)** to see it in action. the whole process takes under 10 seconds.
