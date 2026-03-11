@@ -101,12 +101,13 @@ Pour annuler : **Revert Optimization** → sélectionner un backup dans la liste
 ---
 
 ## Notes
-> [!CAUTION]
 - Un backup `.reg` est créé automatiquement dans `MouseOptimizer_Backups/` avant chaque application — même si certaines clés n'existent pas encore.
-- Tester ces deux ci dessous **indépendamment** en cas d'instabilité pour isoler la source du problème et corrige cela.
-- `CursorUpdateInterval = 0` correspond au taux maximal. Augmenter progressivement (1, 2, 3...) si des instabilités apparaissent.
-- `MouseDataQueueSize` : **ne pas descendre en dessous de 16**. Sur systèmes anciens ou instables, tester 18–24.
 - Redémarrage recommandé après application — certaines clés kernel ne sont chargées qu'au boot.
+
+> [!CAUTION]
+> Tester ces deux ci dessous **indépendamment** en cas d'instabilité pour isoler la source du problème et corrige cela.
+> `CursorUpdateInterval = 0` correspond au taux maximal. Augmenter progressivement (1, 2, 3...) si des instabilités apparaissent.
+> `MouseDataQueueSize` : **ne pas descendre en dessous de 16**. Sur systèmes anciens ou instables, tester 18–24.
 
 > [!CAUTION]
 > If you are not allowed to run **PowerShell scripts**, *enable* it first:
