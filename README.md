@@ -8,7 +8,7 @@
 
 ## Preview
 
-> Interface principale — menu latéral avec les 6 catégories de tweaks, console de sortie intégrée et boutons d'action (Apply, Revert, Status).
+> Interface principale — menu latéral avec les 6 catégories de tweaks, avec console de sortie intégrée.
 
 ![Main interface](https://imgur.com/XTgQb9A.png)
 
@@ -18,7 +18,7 @@
 ---
 
 **Tweak selection popup — sélection individuelle des tweaks**
-> Fenêtre de sélection d'une catégorie : chaque tweak est listé avec son nom, sa description et une case à cocher. Il est possible de tout sélectionner, tout désélectionner, ou choisir manuellement les tweaks à appliquer avant de confirmer.
+> Fenêtre de sélection d'une catégorie : chaque tweak est listé avec son nom, sa description et une case à cocher. Il est possible de tout sélectionner, tout désélectionner, ou choisir manuellement les tweaks à appliquer avant de confirmer (il est possbile de se rendre a son emplacement dans le registre en cliquant sur le nom de la cle reg en question sur la quelle vous etes placer avec la souris.
 
 ![Tweak popup](https://imgur.com/2N5SAvL.png)
 
@@ -47,17 +47,6 @@
 
 ---
 
-## Support
-**If you need any help or have questions**, feel free to join the **[Discord support server](https://discord.gg/insovs)** — I'll be happy to assist you.
-
----
-
-## Installation & Launch
-Head to the **[Releases](https://github.com/insovs/insopti-ServiceOptimization/releases)** section and download `MouseOptimization.ps1`, then **right-click** it → **"Run with PowerShell"**.  
-The script will automatically request administrator privileges and open a dark GUI — no installation required, fully standalone.
-
----
-
 ## Fonctionnalités
 
 - Suppression complète de l'accélération souris (logicielle via `MouseSpeed` + matérielle via `MouseThreshold1/2`)
@@ -71,6 +60,17 @@ The script will automatically request administrator privileges and open a dark G
 - Backup `.reg` automatique avant chaque modification — restauration complète possible à tout moment
 - Revert en un clic — sélection du backup et restauration silencieuse via `regedit /s`
 - Interface console intégrée — log en temps réel de chaque tweak appliqué avec statut coloré
+
+---
+
+## Support
+**If you need any help or have questions**, feel free to join the **[Discord support server](https://discord.gg/insovs)** — I'll be happy to assist you.
+
+---
+
+## Installation & Launch
+Head to the **[Releases](https://github.com/insovs/insopti-MouseOptimization/releases)** section and download `MouseOptimization.ps1`, then **right-click** it → **"Run with PowerShell"**.  
+The script will automatically request administrator privileges and open a dark GUI — no installation required, fully standalone.
 
 ---
 
