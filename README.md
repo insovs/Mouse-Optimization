@@ -9,7 +9,7 @@ L'interface permet de sélectionner, appliquer ou annuler chaque catégorie de t
 ---
 
 ## Preview
-![Proceed Optimization](https://imgur.com/w2ZweoV.png)
+![Proceed Optimization](https://imgur.com/XTgQb9A.png)
 
 <details>
   <summary>Click to show more screenshots</summary>
