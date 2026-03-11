@@ -2,8 +2,7 @@
 > PowerShell script with a graphical interface to optimize mouse input on Windows.  
 > Designed for competitive gaming — removes all latency and software interference.
 
-A set of targeted registry tweaks to achieve **raw, linear and immediate** mouse movement. 
-The interface lets you select, apply or revert each category of tweaks in one click, with automatic backup before any modification.
+A set of targeted registry tweaks to achieve **raw, linear and immediate** mouse movement. The interface lets you select, apply or revert each category of tweaks in one click, with automatic backup before any modification.
 
 > [!NOTE]
 > Not sure what it does? Check the **[video preview](https://youtu.be/p5Yo4Uq4rYk)** to see it in action. The whole process takes under 10 seconds.
