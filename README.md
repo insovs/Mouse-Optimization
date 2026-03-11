@@ -15,10 +15,6 @@ A set of targeted registry tweaks to achieve **raw, linear and immediate** mouse
 <details>
   <summary>More screenshots</summary>
 
-> [!NOTE]
-> Not sure what it does? Check the **[video preview](https://youtu.be/p5Yo4Uq4rYk)** to see it in action. The whole process takes under 10 seconds.
-
-
 ---
 
 **Tweak selection popup — individual tweak selection**
@@ -48,6 +44,9 @@ A set of targeted registry tweaks to achieve **raw, linear and immediate** mouse
 ![Revert view](https://imgur.com/wfyMDDy.png)
 
 </details>
+
+> [!NOTE]
+> Not sure what it does? Check the **[video preview](https://youtu.be/p5Yo4Uq4rYk)** to see it in action. The whole process takes under 10 seconds.
 
 ---
 
