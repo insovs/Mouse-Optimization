@@ -14,9 +14,9 @@ L'interface permet de sélectionner, appliquer ou annuler chaque catégorie de t
 <details>
   <summary>Click to show more screenshots</summary>
 
-**Revert Optimization** — backup selection and restore
+**First section Optimization**
 
-![Revert Optimization](https://imgur.com/GpLiM9G.png)
+![Revert Optimization](https://imgur.com/2N5SAvL.png)
 
 **Show Service List** — live status of all tracked services
 
