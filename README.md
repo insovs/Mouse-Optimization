@@ -128,7 +128,6 @@ To undo: **Revert Optimization** → select a backup from the list → **Restore
 | `ActiveWindowTracking` | `0` dec | `0` | Focus does not follow cursor without a click |
 | `Beep` | `"No"` str | `"Yes"` | Mouse beep sounds disabled |
 | `ExtendedSounds` | `"No"` str | `"Yes"` | Extended mouse audio feedback disabled |
-| `UserPreferencesMask` | `90 12 07 80 10 00 00 00` hex | `9E 3E 07 80…` | Disables cursor shadow and GPU-rendered desktop visual effects |
 | `DisableSelectiveSuspend` | `1` dec | `0` | Prevents USB port power cuts that cause micro-stutters |
 | `PollStatusIterations` | `1` dec | `12` | Reduces PS/2 polling overhead — lower input latency on legacy ports |
 | `AttractionRectInsetInDIPS` | `0` dec | varies | Disables cursor magnetism attraction zone around UI buttons |
