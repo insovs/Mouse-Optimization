@@ -8,15 +8,42 @@ L'interface permet de sélectionner, appliquer ou annuler chaque catégorie de t
 
 ---
 
+## Preview
+![Proceed Optimization](https://imgur.com/rn70v3j.png)
+
+<details>
+  <summary>Click to show more screenshots</summary>
+
+**Revert Optimization** — backup selection and restore
+
+![Revert Optimization](https://imgur.com/GpLiM9G.png)
+
+**Show Service List** — live status of all tracked services
+
+![Show Service List](https://imgur.com/KYVltbi.png)
+
+**Result** — a lightweight Windows without too much effort
+
+![Task Manager result](https://imgur.com/lEdrvYW.png)
+
+</details>
+
+## Support
+**If you need any help or have questions**, feel free to join the **[Discord support server](https://discord.gg/insovs)** — I'll be happy to assist you.
+
+## Installation & Launch
+Head to the **[Releases](https://github.com/insovs/insopti-ServiceOptimization/releases)** section and download `ServiceOptimization.ps1`, then **right-click** it → **"Run with PowerShell"**.  
+The script will automatically request administrator privileges and open a dark GUI.
+
 ## Fonctionnalités
 
 - Suppression complète de l'accélération (logicielle + matérielle)
 - Mouvement 1:1 parfaitement linéaire (courbes X/Y plates)
-- Désactivation du magnétisme curseur et des auto-focus
-- Optimisation USB (suspension sélective désactivée)
 - Réduction des délais driver : `mouclass.sys` priorité kernel 31, transmit timeout 0
-- Buffer d'entrée bas (MouseDataQueueSize = 16)
-- Suppression des effets visuels parasites (ombres, trainées)
+- Optimization du buffer data queue Size.
+- Optimisation USB (suspension sélective désactivée)
+- Désactivation du magnétisme curseur et des auto-focus
+- Suppression des effets visuels parasites du curseurs (ombres, trainées)
 - Backup `.reg` automatique avant chaque modification
 - Revert en un clic via le backup sélectionné
 
@@ -26,12 +53,12 @@ L'interface permet de sélectionner, appliquer ou annuler chaque catégorie de t
 
 | Catégorie | Effet principal |
 |---|---|
-| Main Registry Tweaks | Accel off, hover 0ms, double-clic 200ms, beep off |
+| Main Registry Tweaks | Accel off, hover 0ms, double-clic 200ms, etc |
 | CursorUpdateInterval | Taux de mise à jour curseur maximal |
 | HID Pointer Mode | Pointeur absolu/relatif sans conversion parasite |
 | Class Transmit Timeout | Envoi immédiat des événements input |
-| Class Thread Priority | Priorité kernel 31 pour `mouclass.sys` |
-| Data Queue Size | Buffer d'entrée minimal (recommandé : 16) |
+| Class Thread Priority | Priorité kernel realtime pour `mouclass.sys` |
+| Data Queue Size | envoie des informations plus rapide|
 
 ---
 
@@ -54,18 +81,24 @@ Pour annuler : **Revert Optimization** → sélectionner un backup → **Restore
 ## Notes
 
 - Un backup `.reg` est créé automatiquement dans `MouseOptimizer_Backups/` avant chaque application.
-- Tester chaque catégorie indépendamment en cas d'instabilité.
+- Tester ces catégories indépendamment en cas d'instabilité.
 - `CursorUpdateInterval = 0` = latence max. Augmenter si instabilité.
 - `MouseDataQueueSize` : ne pas descendre en dessous de 16.
-- Redémarrage recommandé après application.
+- Redémarrage recommandé après application d'un tweaks.
 
----
+> [!CAUTION]
+> If you are not allowed to run **PowerShell scripts**, *enable* it first:
+> ```
+> Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
+> ```
+> or refer to [EnablePowerShellScript](https://github.com/insovs/EnablePowerShellScript).
 
-## Source officielle
-
-Télécharger uniquement depuis : **https://github.com/insovs**  
-Modification, copie ou redistribution **interdites**.
-
----
 
 *Pour toute question : [Discord](https://discord.com/invite/fayeECjdtb)*
+
+---
+
+<p align="center">
+  <sub>©insopti — <a href="https://guns.lol/inso.vs">guns.lol/inso.vs</a> | For personal use only.</sub>
+</p>
+
