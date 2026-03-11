@@ -52,16 +52,16 @@ Ensemble de tweaks registre ciblés pour obtenir un mouvement souris **brut, lin
 
 ## Fonctionnalités
 
-- Suppression complète de l'accélération souris (logicielle via `MouseSpeed` + matérielle via `MouseThreshold1/2`)
-- Mouvement 1:1 parfaitement linéaire — courbes X/Y (`SmoothMouseXCurve` / `SmoothMouseYCurve`) forcées à zéro
-- Désactivation du magnétisme curseur Windows (`CursorMagnetism`) — supprime les attractions automatiques vers les boutons UI
-- Réduction des délais driver — `mouclass.sys` en priorité kernel realtime (31) et transmit timeout forcé à 0
-- Optimisation du buffer d'entrée — `MouseDataQueueSize` réglé à 16 pour un transfert d'événements plus rapide
-- Optimisation USB — suspension sélective désactivée pour éviter les micro-coupures et la latence périphérique
-- Hover instantané — `MouseHoverTime` à 0ms, double-clic resserré à 200ms
-- Backup `.reg` automatique avant chaque modification — restauration complète possible à tout moment
-- Revert en un clic — sélection du backup et restauration silencieuse via `regedit /s`
-- Interface console intégrée — log en temps réel de chaque tweak appliqué avec statut coloré
+- Suppression complète de l'accélération souris (logicielle via `MouseSpeed` + matérielle via `MouseThreshold1/2`).
+- Mouvement 1:1 parfaitement linéaire — courbes X/Y (`SmoothMouseXCurve` / `SmoothMouseYCurve`) forcées à zéro.
+- Réduction des délais driver — `mouclass.sys` en priorité kernel realtime (31) et transmit timeout forcé à 0.
+- Optimisation du buffer d'entrée — `MouseDataQueueSize` réglé à 16 pour un transfert d'événements plus rapide.
+- Optimisation USB — suspension sélective désactivée pour éviter les micro-coupures et la latence périphérique.
+- Hover instantané — `MouseHoverTime` à 0ms, double-clic resserré à 200ms.
+- Désactivation du magnétisme curseur Windows (`CursorMagnetism`) — supprime les attractions automatiques vers les boutons UI.
+- Backup `.reg` automatique avant chaque modification — restauration complète possible à tout moment.
+- Revert en un clic — sélection du backup et restauration silencieuse via `regedit /s`.
+- Interface console intégrée — log en temps réel de chaque tweak appliqué avec statut coloré.
 
 ---
 
