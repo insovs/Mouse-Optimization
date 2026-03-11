@@ -102,41 +102,41 @@ To undo: **Revert Optimization** → select a backup from the list → **Restore
 ### 🟢 Category 1 — Main Mouse Registry Tweaks
 > `HKCU\Control Panel\Mouse` · `HKLM\SYSTEM\...` · `HKCU\Control Panel\Desktop`
 
-| Key | Type | Value | Default | Effect |
-|---|---|---|---|---|
-| `MouseSpeed` | STRING | `0` | `1` | Disables Windows pointer acceleration (Enhanced Pointer Precision) |
-| `MouseThreshold1` | STRING | `0` | `6` | Removes first acceleration threshold (2x speed multiplier) |
-| `MouseThreshold2` | STRING | `0` | `10` | Removes second acceleration threshold (4x speed multiplier) |
-| `MouseSensitivity` | STRING | `10` | `10` | Neutral midpoint — no amplification of raw input |
-| `SmoothMouseXCurve` | BINARY | `0x00…` | curve data | Flat horizontal response — zero speed-dependent amplification on X axis |
-| `SmoothMouseYCurve` | BINARY | `0x00…` | curve data | Flat vertical response — perfect 1:1 physical distance mapping on Y axis |
-| `MouseHoverTime` | STRING | `0` | `400` | Tooltip fires instantly at 0ms instead of 400ms |
-| `DoubleClickSpeed` | STRING | `200` | `500` | Tighter double-click detection window (200ms) |
-| `MouseTrails` | STRING | `0` | `0` | Cursor ghost trails disabled — removes rendering overhead |
-| `MouseDelay` | STRING | `0` | `0` | No delay before first click-repeat event fires |
-| `MouseAccel` | STRING | `0` | `0` | Legacy hardware acceleration flag explicitly disabled |
-| `SwapMouseButtons` | STRING | `0` | `0` | Standard button layout enforced |
-| `SnapToDefaultButton` | STRING | `0` | `0` | Disables auto-snap cursor to default dialog button |
-| `ActiveWindowTracking` | DWORD | `0` | `0` | Focus does not follow cursor without a click |
-| `Beep` | STRING | `No` | `Yes` | Mouse beep sounds disabled |
-| `ExtendedSounds` | STRING | `No` | `Yes` | Extended mouse audio feedback disabled |
-| `UserPreferencesMask` | BINARY | `90 12 07 80…` | `9E 3E 07 80…` | Disables cursor shadow and GPU-rendered desktop visual effects |
-| `DisableSelectiveSuspend` | DWORD | `1` | `0` | Prevents USB port power cuts that cause micro-stutters |
-| `PollStatusIterations` | DWORD | `1` | `12` | Reduces PS/2 polling overhead — lower input latency on legacy ports |
-| `AttractionRectInsetInDIPS` | DWORD | `0` | varies | Disables cursor magnetism attraction zone around UI buttons |
-| `DistanceThresholdInDIPS` | DWORD | `0` | varies | Cursor is never pulled toward any UI element |
-| `MagnetismDelayInMilliseconds` | DWORD | `1` | varies | Minimizes the window during which magnetism can engage |
-| `MagnetismUpdateIntervalInMilliseconds` | DWORD | `1` | varies | Near-zero magnetism recalculation interval |
-| `VelocityInDIPSPerSecond` | DWORD | `0` | varies | Zero attraction velocity — no cursor pull force applied |
+| Key | Value | Default | Effect |
+|---|---|---|---|
+| `MouseSpeed` | `0` | `1` | Disables Windows pointer acceleration (Enhanced Pointer Precision) |
+| `MouseThreshold1` | `0` | `6` | Removes first acceleration threshold (2x speed multiplier) |
+| `MouseThreshold2` | `0` | `10` | Removes second acceleration threshold (4x speed multiplier) |
+| `MouseSensitivity` | `10` | `10` | Neutral midpoint — no amplification of raw input |
+| `SmoothMouseXCurve` | `0x00…` | curve data | Flat horizontal response — zero speed-dependent amplification on X axis |
+| `SmoothMouseYCurve` | `0x00…` | curve data | Flat vertical response — perfect 1:1 physical distance mapping on Y axis |
+| `MouseHoverTime` | `0` | `400` | Tooltip fires instantly at 0ms instead of 400ms |
+| `DoubleClickSpeed` | `200` | `500` | Tighter double-click detection window (200ms) |
+| `MouseTrails` | `0` | `0` | Cursor ghost trails disabled — removes rendering overhead |
+| `MouseDelay` | `0` | `0` | No delay before first click-repeat event fires |
+| `MouseAccel` | `0` | `0` | Legacy hardware acceleration flag explicitly disabled |
+| `SwapMouseButtons` | `0` | `0` | Standard button layout enforced |
+| `SnapToDefaultButton` | `0` | `0` | Disables auto-snap cursor to default dialog button |
+| `ActiveWindowTracking` | `0` | `0` | Focus does not follow cursor without a click |
+| `Beep` | `No` | `Yes` | Mouse beep sounds disabled |
+| `ExtendedSounds` | `No` | `Yes` | Extended mouse audio feedback disabled |
+| `UserPreferencesMask` | `90 12 07 80…` | `9E 3E 07 80…` | Disables cursor shadow and GPU-rendered desktop visual effects |
+| `DisableSelectiveSuspend` | `1` | `0` | Prevents USB port power cuts that cause micro-stutters |
+| `PollStatusIterations` | `1` | `12` | Reduces PS/2 polling overhead — lower input latency on legacy ports |
+| `AttractionRectInsetInDIPS` | `0` | varies | Disables cursor magnetism attraction zone around UI buttons |
+| `DistanceThresholdInDIPS` | `0` | varies | Cursor is never pulled toward any UI element |
+| `MagnetismDelayInMilliseconds` | `1` | varies | Minimizes the window during which magnetism can engage |
+| `MagnetismUpdateIntervalInMilliseconds` | `1` | varies | Near-zero magnetism recalculation interval |
+| `VelocityInDIPSPerSecond` | `0` | varies | Zero attraction velocity — no cursor pull force applied |
 
 ---
 
 ### 🔵 Category 2 — CursorUpdateInterval
 > `HKLM\SYSTEM\CurrentControlSet\Services\mouhid\Parameters`
 
-| Key | Type | Value | Default | Effect |
-|---|---|---|---|---|
-| `CursorUpdateInterval` | DWORD | `0` *(0–5)* | not set | HID cursor position update rate. `0` = every kernel tick (maximum frequency). Increase progressively if cursor behaves erratically |
+| Key | Value | Default | Effect |
+|---|---|---|---|
+| `CursorUpdateInterval` | `0` *(0–5)* | not set | HID cursor position update rate. `0` = every kernel tick (maximum frequency). Increase progressively if cursor behaves erratically |
 
 > [!CAUTION]
 > Start at `0`. If you experience erratic cursor movement, increase to `1`, `2`… until stable.
@@ -146,37 +146,37 @@ To undo: **Revert Optimization** → select a backup from the list → **Restore
 ### 🟡 Category 3 — HID Pointer Mode Tweaks
 > `HKLM\SYSTEM\CurrentControlSet\Services\mouhid\Parameters`
 
-| Key | Type | Value | Default | Effect |
-|---|---|---|---|---|
-| `TreatAbsolutePointerAsAbsolute` | DWORD | `1` | `0` | Forces absolute HID devices to map directly to screen coordinates — prevents misinterpretation as relative movement |
-| `TreatAbsoluteAsRelative` | DWORD | `0` | `0` | Explicitly blocks absolute-to-relative conversion — prevents cursor jumps and erratic behavior |
+| Key | Value | Default | Effect |
+|---|---|---|---|
+| `TreatAbsolutePointerAsAbsolute` | `1` | `0` | Forces absolute HID devices to map directly to screen coordinates — prevents misinterpretation as relative movement |
+| `TreatAbsoluteAsRelative` | `0` | `0` | Explicitly blocks absolute-to-relative conversion — prevents cursor jumps and erratic behavior |
 
 ---
 
 ### 🟠 Category 4 — Mouse Class Transmit Timeout
 > `HKLM\SYSTEM\CurrentControlSet\Services\mouclass\Parameters`
 
-| Key | Type | Value | Default | Effect |
-|---|---|---|---|---|
-| `MouseTransmitTimeout` | DWORD | `0` | not set | Removes the internal buffer flush delay in `mouclass.sys` — every input event is forwarded to the OS immediately |
+| Key | Value | Default | Effect |
+|---|---|---|---|
+| `MouseTransmitTimeout` | `0` | not set | Removes the internal buffer flush delay in `mouclass.sys` — every input event is forwarded to the OS immediately |
 
 ---
 
 ### 🟣 Category 5 — Mouse Class Thread Priority
 > `HKLM\SYSTEM\CurrentControlSet\Services\mouclass\Parameters`
 
-| Key | Type | Value | Default | Effect |
-|---|---|---|---|---|
-| `ThreadPriority` | DWORD | `31` (`0x1F`) | not set | Sets `mouclass.sys` to highest kernel realtime priority — mouse events processed before all other threads even under heavy CPU load |
+| Key | Value | Default | Effect |
+|---|---|---|---|
+| `ThreadPriority` | `31` (`0x1F`) | not set | Sets `mouclass.sys` to highest kernel realtime priority — mouse events processed before all other threads even under heavy CPU load |
 
 ---
 
 ### ⚪ Category 6 — Mouse Data Queue Size
 > `HKLM\SYSTEM\CurrentControlSet\Services\mouclass\Parameters`
 
-| Key | Type | Value | Default | Effect |
-|---|---|---|---|---|
-| `MouseDataQueueSize` | DWORD | `16` | `100` | Reduces the `mouclass.sys` event buffer from 100 to 16 — forces more frequent flushes, reducing queued input latency |
+| Key | Value | Default | Effect |
+|---|---|---|---|
+| `MouseDataQueueSize` | `16` | `100` | Reduces the `mouclass.sys` event buffer from 100 to 16 — forces more frequent flushes, reducing queued input latency |
 
 > [!CAUTION]
 > Do not go below `16`. On older or unstable systems, test with `18–24`.
