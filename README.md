@@ -18,16 +18,16 @@ L'interface permet de sélectionner, appliquer ou annuler chaque catégorie de t
 
 ![Revert Optimization](https://imgur.com/2N5SAvL.png)
 
-**Show Service List** — live status of all tracked services
+**Show actual configuration** — live status of all tracked reg keys
 
-![Show Service List](https://imgur.com/KYVltbi.png)
+![Show Service List](https://imgur.com/gDXhdeG.png)
 
 **After have apply th first section exemple** 
 ![After apply](https://imgur.com/p6iMaFw.png)
 
-**Result** — a lightweight Windows without too much effort
+**Backup section** — ...
 
-![Task Manager result](https://imgur.com/lEdrvYW.png)
+![Backup Section](https://imgur.com/wfyMDDy.png)
 
 </details>
 
