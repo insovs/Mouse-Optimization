@@ -95,11 +95,19 @@ To undo: **Revert Optimization** → select a backup from the list → **Restore
 
 ---
 
+
+## Notes
+- A `.reg` backup is automatically created in `MouseOptimizer_Backups/` before each application.
+- Reboot recommended after applying — some kernel keys are only loaded at boot.
+- All tweaks are reversible at any time via the Revert function.
+
+---
+
 ## Registry Key Reference
 
 ---
 
-### 🟢 Category 1 — Main Mouse Registry Tweaks
+### 1. Main Mouse Registry Tweaks
 > `HKCU\Control Panel\Mouse` · `HKLM\SYSTEM\...` · `HKCU\Control Panel\Desktop`
 
 | Key | Value | Default | Effect |
@@ -131,7 +139,7 @@ To undo: **Revert Optimization** → select a backup from the list → **Restore
 
 ---
 
-### 🔵 Category 2 — CursorUpdateInterval
+### 2. CursorUpdateInterval
 > `HKLM\SYSTEM\CurrentControlSet\Services\mouhid\Parameters`
 
 | Key | Value | Default | Effect |
@@ -143,7 +151,7 @@ To undo: **Revert Optimization** → select a backup from the list → **Restore
 
 ---
 
-### 🟡 Category 3 — HID Pointer Mode Tweaks
+### 3. HID Pointer Mode Tweaks
 > `HKLM\SYSTEM\CurrentControlSet\Services\mouhid\Parameters`
 
 | Key | Value | Default | Effect |
@@ -153,7 +161,7 @@ To undo: **Revert Optimization** → select a backup from the list → **Restore
 
 ---
 
-### 🟠 Category 4 — Mouse Class Transmit Timeout
+### 4. Mouse Class Transmit Timeout
 > `HKLM\SYSTEM\CurrentControlSet\Services\mouclass\Parameters`
 
 | Key | Value | Default | Effect |
@@ -162,7 +170,7 @@ To undo: **Revert Optimization** → select a backup from the list → **Restore
 
 ---
 
-### 🟣 Category 5 — Mouse Class Thread Priority
+### 5. Mouse Class Thread Priority
 > `HKLM\SYSTEM\CurrentControlSet\Services\mouclass\Parameters`
 
 | Key | Value | Default | Effect |
@@ -171,7 +179,7 @@ To undo: **Revert Optimization** → select a backup from the list → **Restore
 
 ---
 
-### ⚪ Category 6 — Mouse Data Queue Size
+### ⚪ 6. Mouse Data Queue Size
 > `HKLM\SYSTEM\CurrentControlSet\Services\mouclass\Parameters`
 
 | Key | Value | Default | Effect |
@@ -180,14 +188,6 @@ To undo: **Revert Optimization** → select a backup from the list → **Restore
 
 > [!CAUTION]
 > Do not go below `16`. On older or unstable systems, test with `18–24`.
-
----
-
-
-## Notes
-- A `.reg` backup is automatically created in `MouseOptimizer_Backups/` before each application.
-- Reboot recommended after applying — some kernel keys are only loaded at boot.
-- All tweaks are reversible at any time via the Revert function.
 
 ---
 
