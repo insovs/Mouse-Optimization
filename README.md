@@ -22,6 +22,9 @@ L'interface permet de sélectionner, appliquer ou annuler chaque catégorie de t
 
 ![Show Service List](https://imgur.com/KYVltbi.png)
 
+**After have apply th first section exemple** 
+![After apply](https://imgur.com/p6iMaFw.png)
+
 **Result** — a lightweight Windows without too much effort
 
 ![Task Manager result](https://imgur.com/lEdrvYW.png)
