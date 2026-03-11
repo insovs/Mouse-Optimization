@@ -1,7 +1,3 @@
-Voici le README traduit en anglais, prêt pour GitHub :
-
----
-
 # Mouse Optimization — PowerShell GUI
 > PowerShell script with a graphical interface to optimize mouse input on Windows.  
 > Designed for competitive gaming — removes all latency and software interference.
