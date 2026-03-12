@@ -59,6 +59,7 @@ A set of targeted registry tweaks to achieve **raw, linear and immediate** mouse
 - USB optimization — selective suspend disabled to prevent micro-cutouts and peripheral latency.
 - Instant hover — `MouseHoverTime` at 0ms, double-click tightened to 200ms.
 - Windows cursor magnetism disabled (`CursorMagnetism`) — removes automatic attraction towards UI buttons.
+
 - Automatic `.reg` backup before every modification — full restore possible at any time.
 - One-click revert — select a backup and silently restore via `regedit /s`.
 - Integrated console interface — real-time log of every applied tweak with color-coded status.
