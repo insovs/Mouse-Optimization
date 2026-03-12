@@ -178,7 +178,7 @@ To undo: **Revert Optimization** → select a backup from the list → **Restore
 
 ---
 
-### ⚪ 6. Mouse Data Queue Size
+### 6. Mouse Data Queue Size
 > `HKLM\SYSTEM\CurrentControlSet\Services\mouclass\Parameters`
 
 | Key | Value | Default | Effect |
